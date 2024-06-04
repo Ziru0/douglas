@@ -5,11 +5,16 @@ var path = require('path');
 
 const app = express();
 
-
+const port = 8080 | 4000
 app.use(session({secret:'sessionsecret777'}));
 app.use(bodyparser.urlencoded({extended:true}));
 app.set('view engine','ejs');
 app.set('views', path.join(__dirname, '/views'));
+
+
+
+
+
 
 app.get('/', (req,res) => {
     res.send('douglas ♥ cendy')
@@ -18,6 +23,6 @@ app.get('/', (req,res) => {
 
 
 
-app.listen(8080,()=>{
-    console.log("Server listening at port 8080");
+app.listen(port,()=>{
+    console.log("Server listening at port", port);
 })
